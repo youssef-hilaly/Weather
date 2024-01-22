@@ -11,6 +11,37 @@
     background-color: #009ad8;
 }
 
+.loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: var(--mainColor);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.loading .spinner {
+    width: 100px;
+    height: 100px;
+
+    border: 10px solid #fff;
+    border-top-color: var(--secondColor);
+    border-radius: 50%;
+
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
 
 /* nav */
 .nav-link {
