@@ -1,8 +1,6 @@
 let days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 let months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
 
-// loading
-const loading = document.querySelector('.loading');
 // input 
 const input = document.querySelector('#searchInput');
 
@@ -31,10 +29,10 @@ function getLocation() {
 
 function getCountryName(position) {
 
-    let lat1 = position.coords.latitude;
-    let lng1 = position.coords.longitude;
+    let lat = position.coords.latitude;
+    let lng = position.coords.longitude;
 
-    const url = `http://api.geonames.org/countryCodeJSON?lat=${lat1}&lng=${lng1}&username=youssefhilaly`;
+    const url = `https://api.geonames.org/countryCodeJSON?lat=${lat}&lng=${lng}&username=youssefhilaly`;
     fetch(url)
         .then(response => response.json())
         .then(data => {
@@ -52,7 +50,7 @@ input.addEventListener('keyup', (e) => {
 
 function getWeather(city) {
     console.log(city)
-    const url = `http://api.weatherapi.com/v1/forecast.json?key=2c0b50c8c0814330909181042242201&q=${city}&days=3&aqi=no&alerts=no`;
+    const url = `https://api.weatherapi.com/v1/forecast.json?key=2c0b50c8c0814330909181042242201&q=${city}&days=3&aqi=no&alerts=no`;
     fetch(url)
         .then(response => response.json())
         .then(data => showWeather(data))
@@ -138,9 +136,4 @@ function showWeather(data) {
         </div>
         <p>${dayBeforeNextDay.day.condition.text}</p>`
 
-
-    // loading
-    if (loading) {
-        loading.style.display = 'none';
-    }
 }
