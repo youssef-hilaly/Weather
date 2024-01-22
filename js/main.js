@@ -1,8 +1,6 @@
 let days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 let months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
 
-// loading
-const loading = document.querySelector('.loading');
 // input 
 const input = document.querySelector('#searchInput');
 
@@ -138,7 +136,4 @@ function showWeather(data) {
         </div>
         <p>${dayBeforeNextDay.day.condition.text}</p>`
 
-        if (loading) {
-            loading.style.display = 'none';
-        }
 }
