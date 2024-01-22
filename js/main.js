@@ -139,6 +139,6 @@ function showWeather(data) {
         <p>${dayBeforeNextDay.day.condition.text}</p>`
 
         if (loading) {
-            loading.remove();
+            loading.style.display = 'none';
         }
 }
